@@ -353,7 +353,7 @@
 
         NAV {
             bindings = <
-&kp F12  &kp F1  &kp F2          &kp F3          &kp F4           &kp F5  &kp F6  &kp F7          &kp F8    &kp F9           &kp F10    &Kp F11
+&kp F12  &kp F1  &kp F2          &kp F3          &kp F4           &kp F5  &kp F6  &kp F7          &kp F8    &kp F9           &kp F10    &kp F11
 &trans   &trans  &trans          &mmv MOVE_UP    &trans           &trans  &trans  &trans          &kp UP    &trans           &trans     &trans
 &kp TAB  &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &trans  &kp LEFT_ARROW  &kp DOWN  &kp RIGHT_ARROW  &trans     &trans
 &trans   &trans  &trans          &trans          &trans           &trans  &trans  &kp HOME        &kp END   &kp PG_UP        &kp PG_DN  &trans
@@ -366,8 +366,8 @@
         SYM {
             bindings = <
 &trans     &trans    &trans   &trans   &trans      &trans     &trans        &trans      &trans    &trans    &trans     &trans
-&kp TILDE  &kp AT    &kp f13  &kp f14  &kp AMPS    &kp UNDER  &kp PLUS      &kp AMPS    &kp LBKT  &kp RBKT  &kp PRCNT  &kp BSLH
-&kp GRAVE  &kp HASH  &kp f15  &kp f16  &kp LS(N6)  &kp UNDER  &kp KP_MINUS  &kp LS(N6)  &kp LPAR  &kp RPAR  &kp ASTRK  &kp PIPE
+&kp TILDE  &kp AT    &kp F13  &kp F14  &kp AMPS    &kp UNDER  &kp PLUS      &kp AMPS    &kp LBKT  &kp RBKT  &kp PRCNT  &kp BSLH
+&kp GRAVE  &kp HASH  &kp F15  &kp F16  &kp LS(N6)  &kp UNDER  &kp KP_MINUS  &kp LS(N6)  &kp LPAR  &kp RPAR  &kp ASTRK  &kp PIPE
 &kp DLLR   &none     &kp LT   &kp GT   &kp CARET   &kp MINUS  &kp EQUAL     &kp UNDER   &kp LBRC  &kp RBRC  &kp AT     &kp FSLH
 &trans     &trans    &trans   &trans   &trans      &trans     &trans        &trans      &trans    &trans    &trans     &trans
             >;
@@ -416,7 +416,7 @@
 
             sensor-bindings =
                 <&scroll_vertical_encoder>,
-                // 编码器1：上下滚动,,,,,,,,,,,,
+                // 编码器1：上下滚动,,,,,,,,,,,,,
                 <&scroll_horizontal_encoder>;
 
             // 编码器2：左右滚动
