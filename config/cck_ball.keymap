@@ -26,9 +26,7 @@
 
 &soft_off { hold-time-ms = <2000>; };
 
-
-/{
-
+/ {
     // 上下滚动编码器行为
 
     scroll_vertical_encoder: scroll_vertical_encoder {
@@ -61,90 +59,103 @@
         // };
 
         mm_f1: num_or_f1 {
-            compatible    = "zmk,behavior-mod-morph";
+            compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings      = <&kp N1>, <&kp F1>;
-            mods          = <MOD_LSFT>;
+            bindings = <&kp N1>, <&kp F1>;
+
+            mods = <MOD_LSFT>;
         };
 
         mm_f2: num_or_f2 {
-            compatible    = "zmk,behavior-mod-morph";
+            compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings      = <&kp N2>, <&kp F2>;
-            mods          = <MOD_LSFT>;
+            bindings = <&kp N2>, <&kp F2>;
+
+            mods = <MOD_LSFT>;
         };
 
         mm_f3: num_or_f3 {
-            compatible    = "zmk,behavior-mod-morph";
+            compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings      = <&kp N3>, <&kp F3>;
-            mods          = <MOD_LSFT>;
+            bindings = <&kp N3>, <&kp F3>;
+
+            mods = <MOD_LSFT>;
         };
 
         mm_f4: num_or_f4 {
-            compatible    = "zmk,behavior-mod-morph";
+            compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings      = <&kp N4>, <&kp F4>;
-            mods          = <MOD_LSFT>;
+            bindings = <&kp N4>, <&kp F4>;
+
+            mods = <MOD_LSFT>;
         };
 
         mm_f5: num_or_f5 {
-            compatible    = "zmk,behavior-mod-morph";
+            compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings      = <&kp N5>, <&kp F5>;
-            mods          = <MOD_LSFT>;
+            bindings = <&kp N5>, <&kp F5>;
+
+            mods = <MOD_LSFT>;
         };
 
         mm_f6: num_or_f6 {
-            compatible    = "zmk,behavior-mod-morph";
+            compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings      = <&kp N6>, <&kp F6>;
-            mods          = <MOD_LSFT>;
+            bindings = <&kp N6>, <&kp F6>;
+
+            mods = <MOD_LSFT>;
         };
 
         mm_f7: num_or_f7 {
-            compatible    = "zmk,behavior-mod-morph";
+            compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings      = <&kp N7>, <&kp F7>;
-            mods          = <MOD_LSFT>;
+            bindings = <&kp N7>, <&kp F7>;
+
+            mods = <MOD_LSFT>;
         };
 
         mm_f8: num_or_f8 {
-            compatible    = "zmk,behavior-mod-morph";
+            compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings      = <&kp N8>, <&kp F8>;
-            mods          = <MOD_LSFT>;
+            bindings = <&kp N8>, <&kp F8>;
+
+            mods = <MOD_LSFT>;
         };
 
         mm_f9: num_or_f9 {
-            compatible    = "zmk,behavior-mod-morph";
+            compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings      = <&kp N9>, <&kp F9>;
-            mods          = <MOD_LSFT>;
+            bindings = <&kp N9>, <&kp F9>;
+
+            mods = <MOD_LSFT>;
         };
 
         mm_f10: pct_or_f10 {
-            compatible    = "zmk,behavior-mod-morph";
+            compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings      = <&kp PRCNT>, <&kp F10>;
-            mods          = <MOD_LSFT>;
+            bindings = <&kp PRCNT>, <&kp F10>;
+
+            mods = <MOD_LSFT>;
         };
 
         mm_f11: asterisk_or_f11 {
-            compatible    = "zmk,behavior-mod-morph";
+            compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings      = <&kp ASTRK>, <&kp F11>;
-            mods          = <MOD_LSFT>;
+            bindings = <&kp ASTRK>, <&kp F11>;
+
+            mods = <MOD_LSFT>;
         };
 
         mm_f12: dot_or_f12 {
-            compatible    = "zmk,behavior-mod-morph";
+            compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings      = <&kp DOT>, <&kp F12>;
-            mods          = <MOD_LSFT>;
+            bindings = <&kp DOT>, <&kp F12>;
+
+            mods = <MOD_LSFT>;
         };
 
         // Left-hand HRM
+
         ht_left: left_side_homerow_mod {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -154,10 +165,12 @@
             require-prior-idle-ms = <65>;
             retro-tap;
             bindings = <&kp>, <&kp>;
+
             hold-trigger-key-positions = <KEYS_R THUMBS>;
         };
 
         // Right-hand HRM
+
         ht_right: right_side_homerow_mod {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -167,6 +180,7 @@
             require-prior-idle-ms = <55>;
             retro-tap;
             bindings = <&kp>, <&kp>;
+
             hold-trigger-key-positions = <KEYS_L THUMBS>;
         };
 
@@ -174,7 +188,8 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <150>;
-            bindings = <&lt 6 SPACE>, <&mo 5>; // hold, tap, double_tap
+            bindings = <&lt 6 SPACE>, <&mo 5>;
+ // hold, tap, double_tap
         };
 
         lt_nav: nav_layer_tap {
@@ -189,7 +204,8 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <110>;
-            bindings = <&lt_nav 2 SPACE>, <&kp SPACE>; // hold, tap, double_tap
+            bindings = <&lt_nav 2 SPACE>, <&kp SPACE>;
+ // hold, tap, double_tap
         };
 
         mo_clk: mo_click {
@@ -205,13 +221,14 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <170>;
-            bindings = <&mo_clk 3 LCLK>, <&mkp LCLK>; // hold, tap, double_tap
+            bindings = <&mo_clk 3 LCLK>, <&mkp LCLK>;
+ // hold, tap, double_tap
         };
 
         mo_kp: mo_kp {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor       = "hold-preferred";
+            flavor = "hold-preferred";
             tapping-term-ms = <40>;
             hold-while-undecided;
             bindings = <&mo>, <&kp>;
@@ -221,12 +238,14 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <170>;
-            bindings = <&mo_kp 1 BACKSPACE>, <&kp BACKSPACE>; // hold, tap, double_tap
+            bindings = <&mo_kp 1 BACKSPACE>, <&kp BACKSPACE>;
+ // hold, tap, double_tap
         };
 
         httl: ht_two_layers {
             compatible = "zmk,behavior-hold-tap";
             bindings = <&mo>, <&to>;
+
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <125>;
@@ -235,14 +254,16 @@
         td_layers: td_layer_swap {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = <&to 0>, <&to 6>; // tap, double_tap
+            bindings = <&to 0>, <&to 6>;
+ // tap, double_tap
         };
 
         td_clk_scrl: td_click_or_scroll {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&mkp RCLK>, <&mo 8>;  // tap/hold, double_tap
+            bindings = <&mkp RCLK>, <&mo 8>;
+  // tap/hold, double_tap
         };
 
         td_bore: BASE_or_EXTRA {
@@ -252,26 +273,47 @@
         };
 
         mm_qm_ex: question_exclamation {
-            compatible    = "zmk,behavior-mod-morph";
+            compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings      = <&kp QUESTION>, <&kp EXCLAMATION>;
-            mods          = <(MOD_LSFT | MOD_RSFT)>;
+            bindings = <&kp QUESTION>, <&kp EXCLAMATION>;
+
+            mods = <(MOD_LSFT | MOD_RSFT)>;
         };
 
         mm_pr_col: period_colon {
-            compatible    = "zmk,behavior-mod-morph";
+            compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings      = <&kp PERIOD>, <&kp COLON>;
-            mods          = <(MOD_LSFT | MOD_RSFT)>;
+            bindings = <&kp PERIOD>, <&kp COLON>;
+
+            mods = <(MOD_LSFT | MOD_RSFT)>;
         };
 
         mm_cm_sc: comma_semi_colon {
-            compatible    = "zmk,behavior-mod-morph";
+            compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings      = <&kp COMMA>, <&kp SEMICOLON>;
-            mods          = <(MOD_LSFT | MOD_RSFT)>;
+            bindings = <&kp COMMA>, <&kp SEMICOLON>;
+
+            mods = <(MOD_LSFT | MOD_RSFT)>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        combo_leftclick {
+            bindings = <&mkp MB1>;
+            key-positions = <25 26>;
         };
 
+        combo_midclick {
+            bindings = <&mkp MB3>;
+            key-positions = <26 27>;
+        };
+
+        combo_rightclick {
+            bindings = <&mkp MB2>;
+            key-positions = <27 28>;
+        };
     };
 
     keymap {
@@ -279,36 +321,37 @@
 
         QWERTY {
             bindings = <
-&kp esc           &kp N1        &kp N2        &kp N3       &kp N4           &kp N5      &kp N6         &kp N7       &kp N8       &kp N9     &kp N0     &kp BACKSPACE
-&kp GRAVE         &kp Q         &kp W         &kp E        &kp R            &kp T       &kp Y          &kp U        &kp I        &kp O      &kp P      &kp BSLH
-&kp TAB           &ht_left LCMD A  &ht_left LALT S  &ht_left LSHFT D  &ht_left LCTRL F  &kp G     &kp H  &ht_right RCTRL J  &ht_right RSHFT K  &ht_right LALT L  &ht_right RCMD SEMICOLON  &kp SQT
-&kp LEFT_SHIFT    &kp Z            &kp X            &kp C             &kp V             &kp B     &kp N  &kp M              &mm_cm_sc          &mm_pr_col        &mm_qm_ex                 &kp FSLH
-&kp LEFT_CONTROL  &kp LEFT_WIN  &kp LEFT_ALT  &td_spc_scrl_slow   &td_clk  &td_bs  &kp DEL  &kp ENTER  &td_space_nav  &kp MINUS  &kp EQUAL  &kp RCTRL
->;
+&kp ESC           &kp N1           &kp N2           &kp N3             &kp N4                   &kp N5  &kp N6   &kp N7             &kp N8             &kp N9            &kp N0                    &kp BACKSPACE
+&kp GRAVE         &kp Q            &kp W            &kp E              &kp R                    &kp T   &kp Y    &kp U              &kp I              &kp O             &kp P                     &kp BSLH
+&kp TAB           &ht_left LCMD A  &ht_left LALT S  &ht_left LSHFT D   &ht_left LEFT_CONTROL F  &kp G   &kp H    &ht_right RCTRL J  &ht_right RSHFT K  &ht_right LALT L  &ht_right RCMD SEMICOLON  &kp SQT
+&kp LEFT_SHIFT    &kp Z            &kp X            &kp C              &kp V                    &kp B   &kp N    &kp M              &mm_cm_sc          &mm_pr_col        &mm_qm_ex                 &kp FSLH
+&kp LEFT_CONTROL  &kp LEFT_WIN     &kp LEFT_ALT     &td_spc_scrl_slow  &td_clk                  &td_bs  &kp DEL  &kp ENTER          &td_space_nav      &kp MINUS         &kp EQUAL                 &kp RCTRL
+            >;
 
             sensor-bindings = <&inc_dec_kp LEFT_ARROW RIGHT_ARROW &inc_dec_kp UP_ARROW DOWN_ARROW>;
         };
 
-            NUM {
+        NUM {
             bindings = <
-&trans   &trans &trans  &trans  &trans        &trans               &kp PLUS     &mm_f7    &mm_f8    &mm_f9     &mm_f10  &trans
-&none    &none  &none   &none   &none         &none                &kp KP_MINUS &mm_f4    &mm_f5    &mm_f6     &mm_f11  &trans 
-&trans   &kp LGUI  &KP LALT   &KP LSHFT   &kp LCTRL &kp BACKSPACE  &kp KP_MINUS &mm_f1    &mm_f2    &mm_f3     &mm_f12  &trans 
-&none    &none  &kp X   &none   &none         &kp DEL              &kp KP_multiply    &kp N0    &kp KP_DOT &trans    &trans   &trans 
-&trans   &trans &trans  &trans  &trans        &trans      &trans       &trans    &kp SPACE &trans     &trans   &trans     
+&trans  &trans    &trans    &trans     &trans     &trans         &kp PLUS         &mm_f7  &mm_f8      &mm_f9  &mm_f10  &trans
+&none   &none     &none     &none      &none      &none          &kp KP_MINUS     &mm_f4  &mm_f5      &mm_f6  &mm_f11  &trans
+&trans  &kp LGUI  &KP LALT  &KP LSHFT  &kp LCTRL  &kp BACKSPACE  &kp KP_MINUS     &mm_f1  &mm_f2      &mm_f3  &mm_f12  &trans
+&none   &none     &kp X     &none      &none      &kp DEL        &kp KP_multiply  &kp N0  &kp KP_DOT  &trans  &trans   &trans
+&trans  &trans    &trans    &trans     &trans     &trans         &trans           &trans  &kp SPACE   &trans  &trans   &trans
             >;
 
             sensor-bindings =
                 <&inc_dec_kp LEFT RIGHT>,
                 <&inc_dec_kp UP_ARROW DOWN_ARROW>;
-        }; 
+        };
+
         NAV {
             bindings = <
-&kp F12  &kp F1  &kp F2         &kp F3         &kp F4             &kp F5      &kp F6   &kp F7     &kp F8  &kp F9  &kp F10  &Kp F11
-&trans   &trans  &trans         &mmv MOVE_UP   &trans             &trans      &trans  &trans          &kp UP   &trans            &trans  &trans
-&kp TAB  &trans  &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT    &trans      &trans  &kp LEFT_ARROW  &kp DOWN &kp RIGHT_ARROW   &trans  &trans
-&trans   &trans  &trans         &trans         &trans             &trans      &trans  &kp HOME        &kp END  &kp PG_UP       &kp PG_DN &trans
-&trans   &trans  &trans         &trans         &trans             &trans      &trans  &trans  &trans         &trans        &trans  &trans
+&kp F12  &kp F1  &kp F2          &kp F3          &kp F4           &kp F5  &kp F6  &kp F7          &kp F8    &kp F9           &kp F10    &Kp F11
+&trans   &trans  &trans          &mmv MOVE_UP    &trans           &trans  &trans  &trans          &kp UP    &trans           &trans     &trans
+&kp TAB  &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &trans  &kp LEFT_ARROW  &kp DOWN  &kp RIGHT_ARROW  &trans     &trans
+&trans   &trans  &trans          &trans          &trans           &trans  &trans  &kp HOME        &kp END   &kp PG_UP        &kp PG_DN  &trans
+&trans   &trans  &trans          &trans          &trans           &trans  &trans  &trans          &trans    &trans           &trans     &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LEFT_ARROW RIGHT_ARROW &inc_dec_kp PG_UP PG_DN>;
@@ -316,18 +359,17 @@
 
         SYM {
             bindings = <
-&trans  &trans    &trans    &trans     &trans  &trans  &trans  &trans    &trans    &trans     &trans  &trans
-&kp TILDE    &kp AT      &kp f13      &kp f14  &kp AMPS   &kp UNDER  &kp PLUS     &kp AMPS    &kp LBKT  &kp RBKT  &kp PRCNT  &kp BSLH
-&kp GRAVE    &kp HASH    &kp f15      &kp f16  &kp LS(N6) &kp UNDER  &kp KP_MINUS &kp LS(N6)  &kp LPAR  &kp RPAR  &kp ASTRK  &kp PIPE
-&kp DLLR    &none        &kp LT       &kp GT   &kp CARET  &kp MINUS  &kp EQUAL    &kp UNDER   &kp LBRC  &kp RBRC  &kp AT     &kp FSLH
-&trans      &trans        &trans        &trans        &trans        &trans        &trans  &trans   &trans     &trans     &trans  &trans
+&trans     &trans    &trans   &trans   &trans      &trans     &trans        &trans      &trans    &trans    &trans     &trans
+&kp TILDE  &kp AT    &kp f13  &kp f14  &kp AMPS    &kp UNDER  &kp PLUS      &kp AMPS    &kp LBKT  &kp RBKT  &kp PRCNT  &kp BSLH
+&kp GRAVE  &kp HASH  &kp f15  &kp f16  &kp LS(N6)  &kp UNDER  &kp KP_MINUS  &kp LS(N6)  &kp LPAR  &kp RPAR  &kp ASTRK  &kp PIPE
+&kp DLLR   &none     &kp LT   &kp GT   &kp CARET   &kp MINUS  &kp EQUAL     &kp UNDER   &kp LBRC  &kp RBRC  &kp AT     &kp FSLH
+&trans     &trans    &trans   &trans   &trans      &trans     &trans        &trans      &trans    &trans    &trans     &trans
             >;
 
             sensor-bindings =
                 <&inc_dec_kp C_VOL_UP C_VOL_DN>,
                 <&inc_dec_kp C_BRI_UP C_BRI_DN>;
         };
-
 
         mouse {
             bindings = <
@@ -341,21 +383,22 @@
             sensor-bindings =
                 <&inc_dec_kp LEFT RIGHT>,
                 <&inc_dec_kp UP_ARROW DOWN_ARROW>;
-        }; 
+        };
 
         slow {
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans    &trans    &trans    &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans    &trans    &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans    &trans    &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans    &trans    &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &mkp MB4  &mkp MB5  &mkp MB1  &mkp MB2  &mkp MB3  &trans  &trans  &trans
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans    &trans    &trans    &trans  &trans  &trans
+&trans      &trans        &trans        &trans        &trans        &trans        &trans    &trans    &trans    &trans  &trans  &trans
+&trans      &trans        &trans        &trans        &trans        &trans        &trans    &trans    &trans    &trans  &trans  &trans
+&trans      &trans        &trans        &trans        &trans        &trans        &trans    &trans    &trans    &trans  &trans  &trans
+&trans      &trans        &trans        &trans        &mkp MB4      &mkp MB5      &mkp MB1  &mkp MB2  &mkp MB3  &trans  &trans  &trans
             >;
 
             sensor-bindings =
                 <&inc_dec_kp LEFT RIGHT>,
                 <&inc_dec_kp UP_ARROW DOWN_ARROW>;
-        }; 
+        };
+
         scroll {
             bindings = <
 &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans    &trans    &trans  &trans  &trans
@@ -367,12 +410,10 @@
 
             sensor-bindings =
                 <&scroll_vertical_encoder>,
-                // 编码器1：上下滚动,,,,,,,,
+                // 编码器1：上下滚动,,,,,,,,,
                 <&scroll_horizontal_encoder>;
 
             // 编码器2：左右滚动
         };
-
-
     };
 };
