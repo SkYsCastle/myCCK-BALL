@@ -185,31 +185,48 @@
             hold-trigger-key-positions = <KEYS_L THUMBS>;
         };
 
+leftspace_tap: left_space_layer_switch {
+    compatible = "zmk,behavior-tap-dance";
+    #binding-cells = <2>;
+    tapping-term-ms = <200>;          // 单击和双击时间阈值，可根据需要调整
+    tap-count-trigger-ms = <250>;    // 计算多次点击的时间窗口
+    bindings = <&kp SPACE>, <&to 5>;
+    hold-binding = <&mo 6>;
+    // 配置hold触发条件（默认即可，调整tap用的是tapping-term-ms）
+};  
 
-        td_spc_scrl_slow: td_spc_scrl_slow {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <150>;
-            bindings = <&lt 6 SPACE>, <&mo 5>;
+rightspace_tap: right_space_layer_switch {
+    compatible = "zmk,behavior-tap-dance";
+    #binding-cells = <2>;
+    tapping-term-ms = <200>;          // 单击和双击时间阈值，可根据需要调整
+    tap-count-trigger-ms = <250>;    // 计算多次点击的时间窗口
+    bindings = <&kp SPACE>, <&to 4>;
+    hold-binding = <&mo 2>;
+    // 配置hold触发条件（默认即可，调整tap用的是tapping-term-ms）
+};  
 
-            // hold, tap, double_tap
-        };
-        lt_nav: nav_layer_tap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <170>;
-            bindings = <&mo>, <&kp>;
-        };
-
-        td_space_nav_mouse: td_space {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <110>;
-            bindings = <&lt_nav 2 SPACE>, <&to 4>;
-
-            // hold, tap, double_tap
-        };
+  //      td_spc_scrl_slow: td_spc_scrl_slow {
+  //        compatible = "zmk,behavior-tap-dance";
+  //        #binding-cells = <0>;
+  //        tapping-term-ms = <150>;
+  //        bindings = <&lt 6 SPACE>, <&mo 5>;
+  //        // hold, tap, double_tap
+  //    };
+  //     lt_nav: nav_layer_tap {
+  //         compatible = "zmk,behavior-hold-tap";
+  //        #binding-cells = <2>;
+  //        flavor = "tap-preferred";
+  //        tapping-term-ms = <170>;
+  //        bindings = <&mo>, <&kp>;
+  //    };
+  //
+  //    td_space_nav_mouse: td_space {
+  //        compatible = "zmk,behavior-tap-dance";
+  //        #binding-cells = <0>;
+  //        tapping-term-ms = <110>;
+  //        bindings = <&lt_nav 2 SPACE>, <&to 4>;
+  //        // hold, tap, double_tap
+  //    };
 
         mo_clk: mo_click {
             compatible = "zmk,behavior-hold-tap";
@@ -336,7 +353,7 @@
 &kp GRAVE         &kp Q            &kp W            &kp E              &kp R                    &kp T   &kp Y    &kp U              &kp I                &kp O             &kp P                     &kp BSLH
 &kp TAB           &ht_left LCMD A  &ht_left LALT S  &ht_left LSHFT D   &ht_left LEFT_CONTROL F  &kp G   &kp H    &ht_right RCTRL J  &ht_right RSHFT K    &ht_right LALT L  &ht_right RCMD SEMICOLON  &kp SQT
 &kp LEFT_SHIFT    &kp Z            &kp X            &kp C              &kp V                    &kp B   &kp N    &kp M              &mm_cm_sc            &mm_pr_col        &mm_qm_ex                 &kp FSLH
-&kp LEFT_CONTROL  &kp LEFT_WIN     &kp LEFT_ALT     &td_spc_scrl_slow  &td_clk                  &td_bs  &kp DEL  &kp ENTER          &td_space_nav_mouse  &kp MINUS         &kp EQUAL                 &kp RCTRL
+&kp LEFT_CONTROL  &kp LEFT_WIN     &kp LEFT_ALT     &leftspace_tap  &td_clk                  &td_bs  &kp DEL  &kp ENTER          &rightspace_tap  &kp MINUS         &kp EQUAL                 &kp RCTRL
             >;
             sensor-bindings = <&inc_dec_kp LEFT_ARROW RIGHT_ARROW>, <&inc_dec_kp UP_ARROW DOWN_ARROW>;
         };
