@@ -165,7 +165,6 @@
             require-prior-idle-ms = <65>;
             retro-tap;
             bindings = <&kp>, <&kp>;
-
             hold-trigger-key-positions = <KEYS_R THUMBS>;
         };
 
