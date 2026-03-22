@@ -190,7 +190,6 @@
 
             // hold, tap, double_tap
         };
-
         lt_nav: nav_layer_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
