@@ -191,7 +191,7 @@
 
         leftspace_tap: left_space_layer_switch {
             compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <2>;
+            #binding-cells = <0>;
             tapping-term-ms = <200>;          // 单击和双击时间阈值，可根据需要调整
             tap-count-trigger-ms = <250>;    // 计算多次点击的时间窗口
             bindings = <&lt 6 SPACE>, <&mo 5>;
@@ -203,7 +203,7 @@
 
         rightspace_tap: right_space_layer_switch {
             compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <2>;
+            #binding-cells = <0>;
             tapping-term-ms = <200>;          // 单击和双击时间阈值，可根据需要调整
             tap-count-trigger-ms = <250>;    // 计算多次点击的时间窗口
             bindings = <&lt 2 SPACE>, <&to 4>;
