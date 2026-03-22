@@ -25,8 +25,10 @@
 };
 
 &soft_off { hold-time-ms = <2000>; };
+
 / {
     // 上下滚动编码器行为
+
     scroll_vertical_encoder: scroll_vertical_encoder {
         compatible = "zmk,behavior-sensor-rotate";
         #sensor-binding-cells = <0>;
@@ -337,10 +339,10 @@
 
         NUM {
             bindings = <
-&trans  &trans    &trans    &trans     &trans     &trans         &kp PLUS         &mm_f7  &mm_f8      &mm_f9  &mm_f10  &trans
+&trans  &trans    &trans    &trans     &trans     &trans         &kp KP_PLUS      &mm_f7  &mm_f8      &mm_f9  &mm_f10  &trans
 &none   &none     &none     &none      &none      &none          &kp KP_MINUS     &mm_f4  &mm_f5      &mm_f6  &mm_f11  &trans
-&trans  &kp LGUI  &KP LALT  &KP LSHFT  &kp LCTRL  &kp BACKSPACE  &kp KP_MINUS     &mm_f1  &mm_f2      &mm_f3  &mm_f12  &trans
-&none   &none     &kp X     &none      &none      &kp DEL        &kp KP_multiply  &kp N0  &kp KP_DOT  &trans  &trans   &trans
+&trans  &kp LGUI  &KP LALT  &KP LSHFT  &kp LCTRL  &kp BACKSPACE  &kp KP_MULTIPLY  &mm_f1  &mm_f2      &mm_f3  &mm_f12  &trans
+&none   &none     &kp X     &none      &none      &kp DEL        &kp KP_SLASH     &kp N0  &kp KP_DOT  &trans  &trans   &trans
 &trans  &trans    &trans    &trans     &trans     &trans         &trans           &trans  &kp SPACE   &trans  &trans   &trans
             >;
 
@@ -414,7 +416,7 @@
 
             sensor-bindings =
                 <&scroll_vertical_encoder>,
-                // 编码器1：上下滚动,,,,,,,,,,,
+                // 编码器1：上下滚动,,,,,,,,,,,,
                 <&scroll_horizontal_encoder>;
 
             // 编码器2：左右滚动
