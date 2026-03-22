@@ -189,30 +189,6 @@
             hold-trigger-key-positions = <KEYS_L THUMBS>;
         };
 
-        leftspace_tap: left_space_layer_switch {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;          // 单击和双击时间阈值，可根据需要调整
-            tap-count-trigger-ms = <250>;    // 计算多次点击的时间窗口
-            bindings = <&lt 6 SPACE>, <&mo 5>;
-
-            hold-binding = <&mo 6>;
-
-            // 配置hold触发条件（默认即可，调整tap用的是tapping-term-ms）
-        };
-
-        rightspace_tap: right_space_layer_switch {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;          // 单击和双击时间阈值，可根据需要调整
-            tap-count-trigger-ms = <250>;    // 计算多次点击的时间窗口
-            bindings = <&lt 2 SPACE>, <&to 4>;
-
-            hold-binding = <&mo 2>;
-
-            // 配置hold触发条件（默认即可，调整tap用的是tapping-term-ms）
-        };
-
         //      td_spc_scrl_slow: td_spc_scrl_slow {
         //        compatible = "zmk,behavior-tap-dance";
         //        #binding-cells = <0>;
@@ -327,6 +303,24 @@
 
             mods = <(MOD_LSFT | MOD_RSFT)>;
         };
+
+        rightspace_tap: rightspace_tap {
+            compatible = "zmk,behavior-tap-dance";
+            label = "RIGHTSPACE_TAP";
+            #binding-cells = <0>;
+            bindings = <&lt 2 SPACE>, <&to 4>;
+
+            tapping-term-ms = <150>;
+        };
+
+        left_space: left_space {
+            compatible = "zmk,behavior-tap-dance";
+            label = "LEFT_SPACE";
+            #binding-cells = <0>;
+            bindings = <&lt 6 SPACE>, <&mo 5>;
+
+            tapping-term-ms = <150>;
+        };
     };
 
     combos {
@@ -357,7 +351,7 @@
 &kp GRAVE         &kp Q            &kp W            &kp E             &kp R                    &kp T   &kp Y    &kp U              &kp I              &kp O             &kp P                     &kp BSLH
 &kp TAB           &ht_left LCMD A  &ht_left LALT S  &ht_left LSHFT D  &ht_left LEFT_CONTROL F  &kp G   &kp H    &ht_right RCTRL J  &ht_right RSHFT K  &ht_right LALT L  &ht_right RCMD SEMICOLON  &kp SQT
 &kp LEFT_SHIFT    &kp Z            &kp X            &kp C             &kp V                    &kp B   &kp N    &kp M              &mm_cm_sc          &mm_pr_col        &mm_qm_ex                 &kp FSLH
-&kp LEFT_CONTROL  &kp LEFT_WIN     &kp LEFT_ALT     &leftspace_tap    &td_clk                  &td_bs  &kp DEL  &kp ENTER          &rightspace_tap    &kp MINUS         &kp EQUAL                 &kp RCTRL
+&kp LEFT_CONTROL  &kp LEFT_WIN     &kp LEFT_ALT     &left_space       &td_clk                  &td_bs  &kp DEL  &kp ENTER          &rightspace_tap    &kp MINUS         &kp EQUAL                 &kp RCTRL
             >;
 
             sensor-bindings =
@@ -446,7 +440,7 @@
 
             sensor-bindings =
                 <&scroll_vertical_encoder>,
-                // 编码器1：上下滚动,,,,,,,,,,,,,,,
+                // 编码器1：上下滚动,,,,,,,,,,,,,,,,
                 <&scroll_horizontal_encoder>;
 
             // 编码器2：左右滚动
