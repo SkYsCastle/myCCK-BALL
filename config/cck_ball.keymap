@@ -46,6 +46,8 @@
         tap-ms = <100>;
     };
 
+
+//
     behaviors {
         // ht_num_func: homerow_mod {
         //     compatible = "zmk,behavior-hold-tap";
