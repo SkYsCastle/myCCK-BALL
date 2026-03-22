@@ -152,7 +152,6 @@
 
             mods = <MOD_LSFT>;
         };
-
         // Left-hand HRM
 
         ht_left: left_side_homerow_mod {
