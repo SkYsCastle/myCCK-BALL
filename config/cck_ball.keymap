@@ -329,8 +329,7 @@
 &kp LEFT_SHIFT    &kp Z            &kp X            &kp C              &kp V                    &kp B   &kp N    &kp M              &mm_cm_sc            &mm_pr_col        &mm_qm_ex                 &kp FSLH
 &kp LEFT_CONTROL  &kp LEFT_WIN     &kp LEFT_ALT     &td_spc_scrl_slow  &td_clk                  &td_bs  &kp DEL  &kp ENTER          &td_space_nav_mouse  &kp MINUS         &kp EQUAL                 &kp RCTRL
             >;
-
-            sensor-bindings = <&inc_dec_kp LEFT_ARROW RIGHT_ARROW &inc_dec_kp UP_ARROW DOWN_ARROW>;
+            sensor-bindings = <&inc_dec_kp LEFT_ARROW RIGHT_ARROW>, <&inc_dec_kp UP_ARROW DOWN_ARROW>;
         };
 
         NUM {
