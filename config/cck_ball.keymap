@@ -1,5 +1,8 @@
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1000 // 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 12   // 10
+#define KEYS_L 0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 19 20 21 22  // Left-hand keys.
+#define KEYS_R 6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 16 15 14 13  // Right-hand keys.
+#define THUMBS 36 37 38 39 40  // Thumb keys.
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <behaviors.dtsi>
@@ -155,8 +158,8 @@
 
             mods = <MOD_LSFT>;
         };
-        // Left-hand HRM
 
+        // Left-hand HRM
         ht_left: left_side_homerow_mod {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -166,10 +169,10 @@
             require-prior-idle-ms = <65>;
             retro-tap;
             bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_R THUMBS>;
         };
 
         // Right-hand HRM
-
         ht_right: right_side_homerow_mod {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -179,8 +182,9 @@
             require-prior-idle-ms = <55>;
             retro-tap;
             bindings = <&kp>, <&kp>;
-
+            hold-trigger-key-positions = <KEYS_L THUMBS>;
         };
+
 
         td_spc_scrl_slow: td_spc_scrl_slow {
             compatible = "zmk,behavior-tap-dance";
